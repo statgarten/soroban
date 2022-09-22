@@ -1,48 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>/404.html</loc>
+    <loc>https://www.statgarten.com/soroban/404.html</loc>
   </url>
   <url>
-    <loc>/LICENSE-text.html</loc>
+    <loc>https://www.statgarten.com/soroban/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>/LICENSE.html</loc>
+    <loc>https://www.statgarten.com/soroban/LICENSE.html</loc>
   </url>
   <url>
-    <loc>/authors.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/articles/usage-groupStat-Module.html</loc>
   </url>
   <url>
-    <loc>/index.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/articles/usage-kms-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/index.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/articles/usage-mlr-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_groupStatModule_server.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/articles/usage-pca-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_groupStatModule_ui.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/articles/usage-tree-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_kmsModule_server.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/index.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_kmsModule_ui.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/usage-groupStat-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_mlrModule_ui.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/usage-kms-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_pcaModule_server.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/usage-mlr-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_pcaModule_ui.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/usage-pca-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_treeModule_server.html</loc>
+    <loc>https://www.statgarten.com/soroban/articles/usage-tree-Module.html</loc>
   </url>
   <url>
-    <loc>/reference/mod_treeModule_ui.html</loc>
+    <loc>https://www.statgarten.com/soroban/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/index.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_groupStatModule_server.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_groupStatModule_ui.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_kmsModule_server.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_kmsModule_ui.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_mlrModule_ui.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_pcaModule_server.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_pcaModule_ui.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_treeModule_server.html</loc>
+  </url>
+  <url>
+    <loc>https://www.statgarten.com/soroban/reference/mod_treeModule_ui.html</loc>
   </url>
 </urlset>

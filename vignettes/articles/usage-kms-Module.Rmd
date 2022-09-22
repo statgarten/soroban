@@ -1,0 +1,14 @@
+---
+title: "How to use kmsModule"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(soroban)
+```

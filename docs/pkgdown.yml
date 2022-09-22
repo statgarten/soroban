@@ -1,6 +1,14 @@
 pandoc: '2.18'
 pkgdown: 2.0.6
 pkgdown_sha: ~
-articles: {}
-last_built: 2022-09-21T01:15Z
+articles:
+  usage-groupStat-Module: usage-groupStat-Module.html
+  usage-kms-Module: usage-kms-Module.html
+  usage-mlr-Module: usage-mlr-Module.html
+  usage-pca-Module: usage-pca-Module.html
+  usage-tree-Module: usage-tree-Module.html
+last_built: 2022-09-22T08:17Z
+urls:
+  reference: https://www.statgarten.com/soroban/reference
+  article: https://www.statgarten.com/soroban/articles
 
