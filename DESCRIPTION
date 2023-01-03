@@ -1,14 +1,29 @@
 Package: soroban
 Title: Shiny module for statistics
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Jinhwan", "Kim", , "hwanistic@gmail.com", role = c("cre", "aut"))
-Description: PKG_DESC.
+Description: Shiny module for statistics
 License: MIT + file LICENSE
 Encoding: UTF-8
 URL: https://github.com/statgarten/soroban
 BugReports: https://github.com/statgarten/soroban/issues
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
+Imports:
+    ggparty,
+    ggbiplot,
+    ggplot2,
+    magrittr,
+    shiny,
+    caret,
+    colourpicker,
+    dplyr,
+    factoextra,
+    partykit,
+    plotly,
+    reactable,
+    shinyjs,
+    showtext
 Suggests: 
     rmarkdown
