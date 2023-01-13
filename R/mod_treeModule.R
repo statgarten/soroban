@@ -9,25 +9,55 @@ mod_treeModule_ui <- function(id) {
   ns <- NS(id)
   fluidRow(
     column( # Result Area
-      width = 9,
+      width = 8,
+      style = "border-right: dotted 1px black",
+      h4("Regression Tree"),
       plotOutput(ns("plot"))
     ),
     column( # Options
-      width = 3,
-      selectInput(ns("x"), "x", choices = NULL, multiple = TRUE, width = "100%"),
-      selectInput(ns("y"), "y", choices = NULL, width = "100%"),
-      selectInput(ns("nodePlotX"), "nodePlotX", choices = NULL, width = "100%"),
-      selectInput(ns("nodePlotColor"), "nodePlotColor", choices = NULL, width = "100%"),
-      selectInput(ns("nodePlotShape"), "nodePlotShape", choices = NULL, width = "100%"),
-      sliderInput(ns("nodePlotAlpha"), "nodePlotAlpha", min = 0, max = 1, value = 0.5, step = 0.1, width = "100%"),
-      h5("options"),
-      actionButton(ns("openNode"), "node", width = "100%"),
-      actionButton(ns("openEdge"), "edge", width = "100%"),
-      actionButton(ns("openTerminal"), "terminal", width = "100%"),
+      width = 4,
+      style = "border-left: dotted 1px black",
+      h4("Description"),
+      h5("Regression trees are decision trees in which the target variables can take continuous values instead of class labels in leaves."),
+      h5("Regression trees use modified split selection criteria and stopping criteria."),
+      hr(),
+      h4("Options"),
+      h5("Decision Tree"),
+      fluidRow(
+        column(
+          width = 6,
+          selectInput(ns("x"), "Predictor", choices = NULL, multiple = TRUE, width = "100%")
+        ),
+        column(
+          width = 6,
+          selectInput(ns("y"), "Target", choices = NULL, width = "100%")
+        )
+      ),
+      fluidRow(
+        column(
+          width = 4,
+          actionButton(ns("openNode"), "Node", width = "100%", class = 'myButton')
+        ),
+        column(
+          width = 4,
+          actionButton(ns("openEdge"), "Edge", width = "100%", class = 'myButton')
+        ),
+        column(
+          width = 4,
+          actionButton(ns("openTerminal"), "Terminal", width = "100%", class = 'myButton')
+        )
+      ),
+      hr(),
+      h5("Linear Regression"),
+      selectInput(ns("nodePlotX"), "X (Numeric)", choices = NULL, width = "100%"),
+      selectInput(ns("nodePlotColor"), "Color (Factor)", choices = NULL, width = "100%"),
+      selectInput(ns("nodePlotShape"), "Shape (Factor)", choices = NULL, width = "100%"),
+
       actionButton( # Main action
         ns("tree"),
-        "tree",
-        style = "font-weight: bold; width: 100%; background: #004B4D; border-radius: 0; color: white; border: 0;"
+        label = "tree",
+        class = 'myButton',
+        width = '100%'
       )
     )
   )
@@ -44,7 +74,7 @@ mod_treeModule_ui <- function(id) {
 #' @import ggparty
 #' @import ggplot2
 #' @importFrom colourpicker colourInput
-#' @importFrom partykit lmtree
+#' @importFrom partykit lmtree ctree
 #'
 mod_treeModule_server <- function(id, inputData) {
   moduleServer(id, function(input, output, session) {
@@ -55,32 +85,32 @@ mod_treeModule_server <- function(id, inputData) {
       data <- inputData()
       updateSelectizeInput(
         inputId = "x",
-        label = "x",
-        choices = colnames(data)
+        label = "Predictor (Numeric / Factor)",
+        choices = union( names(Filter(is.numeric, data)),  names(Filter(is.factor, data)))
       )
 
       updateSelectizeInput(
         inputId = "y",
-        label = "y",
+        label = "Target",
         choices = colnames(data)
       )
 
       updateSelectizeInput(
         inputId = "nodePlotX",
-        label = "nodePlotX",
-        choices = colnames(data)
+        label = "X (Numeric)",
+        choices = names(Filter(is.numeric, data))
       )
 
       updateSelectizeInput(
         inputId = "nodePlotColor",
-        label = "nodePlotShape",
-        choices = colnames(data)
+        label = "Color (Factor)",
+        choices = names(Filter(is.factor, data))
       )
 
       updateSelectizeInput(
         inputId = "nodePlotShape",
-        label = "nodePlotShape",
-        choices = colnames(data)
+        label = "Shape (Factor)",
+        choices = names(Filter(is.factor, data))
       )
     })
 
@@ -121,7 +151,8 @@ mod_treeModule_server <- function(id, inputData) {
             sliderInput("predictSize", "predictSize", min = 0, max = 5, value = 1, step = 0.1, width = "100%"),
             colourInput("predictColor", "predictColor", value = "grey"),
             sliderInput("nodeNSize", "nodeNSize", min = 0, max = 20, value = 4, step = 1, width = "100%"),
-            sliderInput("terminalSpace", "tree/plot Ratio", min = 0, max = 1, value = 0.5, step = 0.1, width = "100%")
+            sliderInput("terminalSpace", "tree/plot Ratio", min = 0, max = 1, value = 0.5, step = 0.1, width = "100%"),
+            sliderInput("nodePlotAlpha", "Transparency", min = 0, max = 1, value = 0.5, step = 0.1, width = "100%")
           ),
           easyClose = TRUE,
           footer = NULL
@@ -156,7 +187,7 @@ mod_treeModule_server <- function(id, inputData) {
                   col = input$nodePlotColor, # 8
                   shape = input$nodePlotShape # 9
                 ),
-                alpha = input$nodePlotAlpha # 10
+                alpha = ifelse(is.null(input$nodePlotAlpha), 0.5, input$nodePlotAlpha) # 10
               ),
               theme_bw(base_size = 20) # input$baseSize) # 12; Fixed as 20
             ),
