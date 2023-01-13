@@ -9,18 +9,30 @@ mod_pcaModule_ui <- function(id) {
   ns <- NS(id)
   fluidRow(
     column( # Result Area
-      width = 9,
+      width = 8,
+      style = "border-right: dotted 1px black",
+      h4("PCA Plot"),
       shinyjs::hidden(
         uiOutput(outputId = ns("biplotSlot"))
       )
     ),
     column( # Options
-      width = 3,
+      width = 4,
+      h4("Description"),
+      h5("❓ PCA is a statistical technique for reducing the dimensionality of a dataset"),
+      hr(),
+      h4("Options"),
       selectInput(
         inputId = ns("columns"),
         label = "",
         choices = NULL,
         multiple = TRUE,
+        width = "100%"
+      ),
+      checkboxInput(
+        inputId = ns("scale"),
+        "variable normalize",
+        value = TRUE,
         width = "100%"
       ),
       selectInput(
@@ -42,16 +54,10 @@ mod_pcaModule_ui <- function(id) {
         ticks = FALSE,
         width = "100%"
       ),
-      checkboxInput(
-        inputId = ns("scale"),
-        "variable normalize",
-        value = TRUE,
-        width = "100%"
-      ),
       actionButton( # Main Action
         inputId = ns("pca"),
         label = "draw",
-        style = "font-weight: bold;background: #3EC70B;color: white; width: 100%"
+        style = "font-weight: bold; width: 100%; background: #004B4D; border-radius: 0; color: white; border: 0;"
       )
     )
   )
@@ -93,7 +99,7 @@ mod_pcaModule_server <- function(id, inputData) {
 
       updateSelectizeInput(
         inputId = "labels",
-        label = "Labels-Opt (Character)",
+        label = "Point Labels (Character)",
         choices = c("NULL", names(Filter(is.character, data)))
       )
 

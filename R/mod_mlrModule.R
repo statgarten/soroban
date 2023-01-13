@@ -38,7 +38,7 @@ mod_mlrModule_ui <- function(id) {
       actionButton( # Main Action
         ns("reg"),
         "reg",
-        style = "font-weight: bold;background: #3EC70B;color: white; width: 100%"
+        style = "font-weight: bold; width: 100%; background: #004B4D; border-radius: 0; color: white; border: 0;"
       )
     )
   )

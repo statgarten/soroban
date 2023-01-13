@@ -27,7 +27,7 @@ mod_treeModule_ui <- function(id) {
       actionButton( # Main action
         ns("tree"),
         "tree",
-        style = "font-weight: bold;background: #3EC70B;color: white; width: 100%"
+        style = "font-weight: bold; width: 100%; background: #004B4D; border-radius: 0; color: white; border: 0;"
       )
     )
   )
