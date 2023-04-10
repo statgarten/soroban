@@ -22,6 +22,8 @@ Imports:
     shiny,
     shinyjs,
     showtext
+Remotes:
+    vqv/ggbiplot@master
 Suggests: 
     knitr,
     rmarkdown
