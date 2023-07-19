@@ -8,25 +8,25 @@ License: MIT + file LICENSE
 URL: https://github.com/statgarten/soroban
 BugReports: https://github.com/statgarten/soroban/issues
 Imports:
-    caret,
-    colourpicker,
-    dplyr,
-    factoextra,
-    ggbiplot,
-    ggparty,
-    ggplot2,
-    magrittr,
-    partykit,
-    plotly,
-    reactable,
-    shiny,
-    shinyjs,
-    showtext
+    caret (>= 6.0-94),
+    colourpicker (>= 1.2),
+    dplyr (>= 1.1),
+    factoextra (>= 1.0),
+    ggbiplot (>= 0.55),
+    ggparty (>= 1.0),
+    ggplot2 (>= 3.4),
+    magrittr (>= 2.0),
+    partykit (>= 1.2-20),
+    plotly (>= 4.10),
+    reactable (>= 0.4),
+    shiny (>= 1.7),
+    shinyjs (>= 2.1),
+    showtext (>= 0.9-6)
 Remotes:
     vqv/ggbiplot@master
 Suggests: 
-    knitr,
-    rmarkdown
+    knitr(>= 1.43),
+    rmarkdown (>= 2.23)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
