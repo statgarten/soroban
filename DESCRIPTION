@@ -8,7 +8,7 @@ License: MIT + file LICENSE
 URL: https://github.com/statgarten/soroban
 BugReports: https://github.com/statgarten/soroban/issues
 Imports:
-    caret (>= 6.0-94),
+    caret (>= 6.0),
     colourpicker (>= 1.2),
     dplyr (>= 1.1),
     factoextra (>= 1.0),
@@ -16,12 +16,12 @@ Imports:
     ggparty (>= 1.0),
     ggplot2 (>= 3.4),
     magrittr (>= 2.0),
-    partykit (>= 1.2-20),
+    partykit (>= 1.2),
     plotly (>= 4.10),
     reactable (>= 0.4),
     shiny (>= 1.7),
     shinyjs (>= 2.1),
-    showtext (>= 0.9-6)
+    showtext (>= 0.9)
 Remotes:
     vqv/ggbiplot@master
 Suggests: 
