@@ -49,6 +49,7 @@ mod_treeModule_ui <- function(id) {
       ),
       hr(),
       h5("Linear Regression"),
+      h5("Note: Variable must included in Decision Tree - Predictor"),
       selectInput(ns("nodePlotX"), "X (Numeric)", choices = NULL, width = "100%"),
       selectInput(ns("nodePlotColor"), "Color (Factor)", choices = NULL, width = "100%"),
       selectInput(ns("nodePlotShape"), "Shape (Factor)", choices = NULL, width = "100%"),
