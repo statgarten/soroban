@@ -21,6 +21,7 @@ mod_pcaModule_ui <- function(id) {
       style = "border-left: dotted 1px black",
       h4("Description"),
       h5("❓ PCA is a statistical technique for reducing the dimensionality of a dataset"),
+      h5("⚠️ PCA columns requires 2 columns or more"),
       hr(),
       h4("Options"),
       selectInput(
