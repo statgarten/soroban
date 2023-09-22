@@ -36,15 +36,15 @@ mod_treeModule_ui <- function(id) {
       fluidRow(
         column(
           width = 4,
-          actionButton(ns("openNode"), "Node", width = "100%", class = 'myButton')
+          actionButton(ns("openNode"), "Node", width = "100%", class = "myButton")
         ),
         column(
           width = 4,
-          actionButton(ns("openEdge"), "Edge", width = "100%", class = 'myButton')
+          actionButton(ns("openEdge"), "Edge", width = "100%", class = "myButton")
         ),
         column(
           width = 4,
-          actionButton(ns("openTerminal"), "Terminal", width = "100%", class = 'myButton')
+          actionButton(ns("openTerminal"), "Terminal", width = "100%", class = "myButton")
         )
       ),
       hr(),
@@ -53,12 +53,11 @@ mod_treeModule_ui <- function(id) {
       selectInput(ns("nodePlotX"), "X (Numeric)", choices = NULL, width = "100%"),
       selectInput(ns("nodePlotColor"), "Color (Factor)", choices = NULL, width = "100%"),
       selectInput(ns("nodePlotShape"), "Shape (Factor)", choices = NULL, width = "100%"),
-
       actionButton( # Main action
         ns("tree"),
         label = "tree",
-        class = 'myButton',
-        width = '100%'
+        class = "myButton",
+        width = "100%"
       )
     )
   )
@@ -87,7 +86,7 @@ mod_treeModule_server <- function(id, inputData) {
       updateSelectizeInput(
         inputId = "x",
         label = "Predictor (Numeric / Factor)",
-        choices = union( names(Filter(is.numeric, data)),  names(Filter(is.factor, data)))
+        choices = union(names(Filter(is.numeric, data)), names(Filter(is.factor, data)))
       )
 
       updateSelectizeInput(
