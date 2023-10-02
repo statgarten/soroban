@@ -20,6 +20,7 @@ mod_treeModule_ui <- function(id) {
       h4("Description"),
       h5("Regression trees are decision trees in which the target variables can take continuous values instead of class labels in leaves."),
       h5("Regression trees use modified split selection criteria and stopping criteria."),
+      h5("Variables selected in Linear regression must included in Decision Tree"),
       hr(),
       h4("Options"),
       h5("Decision Tree"),
@@ -63,6 +64,15 @@ mod_treeModule_ui <- function(id) {
   )
 }
 
+#' @title Function to filter unique variables
+#' @description
+#' to prevent error when regression's y value is unique
+#' @param i variable
+#' @return not unique column names
+is.uniq <- function(data) {
+  names(apply(data, FUN = function(i){length(unique(i)) != 1}, 2))
+}
+
 #' @title Shiny Module for data transformation
 #' @description treeModule Server Functions
 #' @export
@@ -92,7 +102,7 @@ mod_treeModule_server <- function(id, inputData) {
       updateSelectizeInput(
         inputId = "y",
         label = "Target",
-        choices = colnames(data)
+        choices = is.uniq(data)
       )
 
       updateSelectizeInput(

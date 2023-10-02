@@ -1,6 +1,6 @@
 Package: soroban
 Title: Shiny module for statistics
-Version: 0.0.5
+Version: 0.0.6
 Authors@R: 
     person("Jinhwan", "Kim", , "hwanistic@gmail.com", role = c("cre", "aut"))
 Description: Shiny module for statistics
