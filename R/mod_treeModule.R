@@ -70,7 +70,9 @@ mod_treeModule_ui <- function(id) {
 #' @param i variable
 #' @return not unique column names
 is.uniq <- function(data) {
-  names(apply(data, FUN = function(i){length(unique(i)) != 1}, 2))
+  names(apply(data, FUN = function(i) {
+    length(unique(i)) != 1
+  }, 2))
 }
 
 #' @title Shiny Module for data transformation
