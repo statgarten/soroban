@@ -1,6 +1,6 @@
 # :yellow_heart: soroban <img src="logo.png" width="120" align="right"/>
 
-Statistics functions considered with shiny
+Statistics functions compatible with shiny
 
 ## :clipboard: Dependency
 
