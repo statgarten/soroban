@@ -2,7 +2,7 @@
 % Please edit documentation in R/mod_kmsModule.R
 \name{mod_kmsModule_ui}
 \alias{mod_kmsModule_ui}
-\title{Shiny Module for data transformation}
+\title{Shiny Module for k means clustering}
 \usage{
 mod_kmsModule_ui(id)
 }

@@ -1,4 +1,4 @@
-#' @title Shiny Module for data transformation
+#' @title Shiny Module for k means clustering
 #' @description kmsModule UI Function
 #'
 #'
@@ -11,11 +11,16 @@ mod_kmsModule_ui <- function(id) {
   ns <- NS(id)
   fluidRow(
     column( # Result Area
-      width = 9,
+      width = 8,
       plotlyOutput(ns("plot"), width = "100%")
     ),
     column( # Options
-      width = 3,
+      width = 4,
+      style = "border-left: dotted 1px black",
+      h4("Description"),
+      h5("❓ Below variable will show character, not duplicated. and used to Label each point of cluster"),
+      h5("⚠️ If no variable exists, try add index (row number) to data"),
+      hr(),
       sliderInput(
         ns("k"),
         "k",
@@ -46,7 +51,7 @@ mod_kmsModule_ui <- function(id) {
   )
 }
 
-#' @title Shiny Module for data transformation
+#' @title Shiny Module for k means clustering
 #' @description kmsModule Server Functions
 #' @export
 #' @import shiny
@@ -59,23 +64,25 @@ mod_kmsModule_ui <- function(id) {
 mod_kmsModule_server <- function(id, inputData) {
   moduleServer(id, function(input, output, session) {
     ns <- session$ns
-
     req(inputData)
 
     observeEvent(inputData(), {
       data <- inputData()
 
+      charNames <- names(Filter(is.character, data))
+      uniqueNames <- find_unique_column(data)
+      values <- intersect(charNames, uniqueNames)
+
       updateSelectizeInput(
         inputId = "labels",
         label = "Labels-Opt (Character)",
-        choices = c("NULL", names(Filter(is.character, data)))
+        choices = c("NULL", values)
       )
     })
 
     observeEvent(input$cluster, {
       data <- inputData()
 
-      print(input$labels)
       if (input$labels != "NULL") { # keep label variable
         labels <- data[[input$labels]]
       }
@@ -104,4 +111,17 @@ mod_kmsModule_server <- function(id, inputData) {
       })
     })
   })
+}
+
+## Not export
+find_unique_column <- function(data) {
+  unique_columns <- character(0)
+
+  for (col in colnames(data)) {
+    if (length(unique(data[[col]])) == nrow(data)) {
+      unique_columns <- c(unique_columns, col)
+    }
+  }
+
+  return(unique_columns)
 }

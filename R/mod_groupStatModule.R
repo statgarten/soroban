@@ -93,7 +93,7 @@ mod_groupStatModule_server <- function(id, inputData) {
         group_by(across(input$groups)) %>%
         summarise(across(names(Filter(is.numeric, data)), match.fun(input$func), na.rm = TRUE))
 
-      for (i in 2:ncol(v)) {
+      for (i in names(Filter(is.numeric, v))) {
         v[, i] <- round(v[, i], digits = input$round)
       }
 
