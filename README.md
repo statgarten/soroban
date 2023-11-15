@@ -1,6 +1,8 @@
 # :yellow_heart: soroban <img src="logo.png" width="120" align="right"/>
 
-Statistics functions compatible with shiny
+Statistics functions compatible with Shiny
+
+Shiny와 호환되는 통계 함수들을 제공하는 패키지입니다.
 
 ## :clipboard: Dependency
 
