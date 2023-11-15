@@ -60,8 +60,8 @@ mod_mlrModule_server <- function(id, inputData) {
 
     observeEvent(inputData(), {
       data <- inputData()
-      updateSelectizeInput(inputId = "x", label = "x", choices = colnames(data))
-      updateSelectizeInput(inputId = "y", label = "y", choices = colnames(data))
+      updateSelectizeInput(inputId = "x", label = "x", choices = names(Filter(is.numeric, data)))
+      updateSelectizeInput(inputId = "y", label = "y", choices = names(Filter(is.numeric, data)))
     })
 
     observeEvent(input$reg, {
