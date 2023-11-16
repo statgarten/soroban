@@ -4,7 +4,7 @@ Statistics functions compatible with Shiny
 
 Shiny와 호환되는 통계 함수들을 제공하는 패키지입니다.
 
-## :clipboard: Dependency
+## :clipboard: Dependency/의존 관계
 
 -   [caret](https://github.com/topepo/caret) - 6.0-93
 -   [colourpicker](https://github.com/daattali/colourpicker) - 1.1.0
