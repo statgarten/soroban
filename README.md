@@ -16,7 +16,7 @@ Shiny와 호환되는 통계 함수들을 제공하는 패키지입니다.
 -   [shinyjs](https://github.com/daattali/shinyjs) - 2.1.0
 -   [showtext](https://github.com/yixuan/showtext) - 0.9-5
 
-## :wrench: Install
+## :wrench: Install/설치
 
 ``` r
 remotes::install_github('statgarten/soroban')
