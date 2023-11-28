@@ -23,12 +23,12 @@ remotes::install_github('statgarten/soroban')
 library(soroban)
 ```
 
-## :+1: Recommended package to use soroban
+## :+1: Recommended packages to use soroban/soroban과 함께 쓰면 좋은 패키지들
 
 -   [datamods](https://github.com/dreamRs/datamods)
 -   [door](https://github.com/statgarten/door)
 
-## :blush: Authors
+## :blush: Authors/만든 사람들
 
 -   :octocat: JInhwan Kim [\@jhk0530](http://github.com/jhk0530)
 
@@ -36,4 +36,4 @@ library(soroban)
 
 Copyright :copyright: 2022 Jinhwan Kim This project is [MIT](https://opensource.org/licenses/MIT) licensed
 
-*This README was generated with :two_hearts: by [shinyReadme](http://github.com/jhk0530/shinyReadme)*
+Copyright :copyright: 2022 Jinhwan Kim. 이 프로젝트는 [MIT(영문)](https://opensource.org/licenses/MIT) 라이센스를 따릅니다.
